@@ -28,3 +28,24 @@ sudo curl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gp
 sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list'
 sudo apt update
 sudo apt install -y pgadmin4-desktop
+
+
+#!/bin/bash
+
+# Update repositories first
+sudo apt update && sudo apt upgrade -y
+
+# --- MY MAIN APPLICATIONS ---
+# Note: This assumes you already added the repos!
+sudo apt install -y \
+    brave-browser \
+    code \
+    postgresql \
+    postgresql-contrib \
+    pgadmin4-desktop \
+    flatpak
+
+echo "-------------------------------------"
+echo "APT packages installed successfully!"
+echo "-------------------------------------"
+echo "Now, run Flatpak commands from README."
